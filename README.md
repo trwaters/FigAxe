@@ -4,9 +4,9 @@
 2. Repeatedly struggling to place colorbars in colormap plots correctly
 3. Remembering how *GridSpec* works to make a custom subplot layout
 
-*FigAxe* takes a somewhat brute-force approach by providing functionality to make fine-adjustments and decide on colorbar placement up front, resulting in a collection of pre-defined figure *layouts*.  A simple hack to *GridSpec* makes it very easy to add new layouts to suit the specific needs of your project.
+*FigAxe* takes a somewhat brute-force approach by providing functionality to make fine-adjustments and decide on colorbar placement up front, resulting in a collection of pre-defined figure *layouts*.  A simple hack to *GridSpec* makes it very easy to add new layouts to suit the specific needs of a given project.
 
-Designed to provide automatated figure generation for [club4am](https://github.com/trwaters/club4am), an analysis and visualization package for the MHD code [Athena++](https://github.com/PrincetonUniversity/athena-public-version), I have begun using *FigAxe* as a productivity aid in all of my projects.  I'd be thrilled if you put it to use as well!
+Designed to provide automatated figure generation for [club4am](https://github.com/trwaters/club4am), an analysis and visualization package for the MHD code [Athena++](https://github.com/PrincetonUniversity/athena-public-version), I have begun using *FigAxe* as a productivity aid in all of my projects.  I'd be thrilled if it became useful to others too!
 
 ## Getting Started ##
 No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.show_layouts()`, and you should see the following:
