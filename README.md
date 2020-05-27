@@ -9,7 +9,7 @@
 Designed to provide automatated figure generation for [club4am](https://github.com/trwaters/club4am), an analysis and visualization package being developed for the MHD code [Athena++](https://github.com/PrincetonUniversity/athena-public-version), I have begun using *FigAxe* as a productivity aid in all of my projects.  I'd be thrilled if it became useful to others too!
 
 ## Requirements ##
-*FigAxe* makes use of the `dataclasses` module that was introduced in `Python 3.7`.
+`Python` version 3.7 or later since *FigAxe* makes use of the `dataclasses` module that was introduced in `Python 3.7`.  I recommend using an [anaconda distribution](https://www.anaconda.com/), which will automatically install *ipython* and *Matplotlib*.
 
 ## Getting Started ##
 No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.show_layouts()`, and you should see the following:
