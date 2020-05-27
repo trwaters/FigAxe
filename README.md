@@ -32,7 +32,7 @@ Out[4]:
  '1cb': 1,
  '2cb': 1}
 ```
-In addition to the two axes handles `axs['1']` and `axs['2']`, there are the two colorbar handles `axs['1b']` and `axs['2b']`.  That is, this custom layout was pre-designed to have handles and room for two horizontal colorbars.  By contrast,
+In addition to the two axes handles `axs['1']` and `axs['2']`, there are the two colorbar handles `axs['1cb']` and `axs['2cb']`.  That is, this custom layout was pre-designed to have handles and room for two horizontal colorbars.  By contrast,
 
     fig,axs =  figaxe.custom_layout('h2cb1')
 has instead a single vertical colorbar and thus only one colorbar handle:
@@ -43,7 +43,6 @@ Out[4]:
 {'1': <matplotlib.axes._subplots.AxesSubplot at 0x7f1a187903d0>,
  '2': <matplotlib.axes._subplots.AxesSubplot at 0x7f1a1876f910>,
  '2cb': 1}
-
 ```
 *FigAxe* supports both vertical and horizontal colorbar placement.  The choice can be specified for each layout defined in `gridspec_helper.custom_layouts()`, with the default being to place horizontal colorbars on *single row layouts* (layout names beginning with *h* in the screenshot above) and vertical colorbars on *single column layouts* (layout names beginning with *v*) **unless** the layout name ends with `cb1`.  Colorbar placement is indicated by the position of the `c` in the ascii-art representations when issuing `figaxe.show_layouts()`.  
 
