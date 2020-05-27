@@ -20,3 +20,10 @@ The helper function `figaxe.plot_layout()` is provided to show the skeleton figu
     
 ## Adding new layouts ##
 The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe` to the functions `custom_layouts()` and `lite_layouts()`, respectively.  Both methods utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new custom layout.  Specifically, the instances of `LiteFigAxe` in `lite_layouts()` ultimately use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
+
+If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts, simply type
+
+    figaxe.lite_layout()
+which will issue an error since no `layout name` was passed.  This error shows the following instructions for defining a new layout:
+
+![lite_layout](https://user-images.githubusercontent.com/3180046/83005637-4781f500-9fce-11ea-9885-9d8af07eec4d.png)
