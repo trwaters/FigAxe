@@ -47,6 +47,9 @@ Out[4]:
 ```
 *FigAxe* supports both vertical and horizontal colorbar placement.  The choice can be specified for each layout defined in `gridspec_helper.custom_layouts()`, with the default being to place horizontal colorbars on *single row layouts* (layout names beginning with *h* in the screenshot above) and vertical colorbars on *single column layouts* (layout names beginning with *v*) **unless** the layout name ends with `cb1`.  Colorbar placement is indicated by the position of the `c` in the ascii-art representations when issuing `figaxe.show_layouts()`.  
 
+### Examples ###
+In the `demos` folder, a few examples of using *FigAxe* to make both line plots and colormap plots are provided.
+
 ## Adding new layouts ##
 The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe` to the functions `custom_layouts()` and `lite_layouts()`, respectively.  Both methods utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new custom layout.  Specifically, the instances of `LiteFigAxe` in `lite_layouts()` ultimately use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
 
