@@ -1,8 +1,8 @@
 # FigAxe
 *FigAxe* has allowed me to overcome a few hurdles that tended to make plotting feel like a chore, even as a rather experienced user of [*Matplotlib*](https://matplotlib.org/):
-1. Habitually having to copy the same code to "finalize" figures (e.g., hiding tick labels, tweaking subplots_adjust etc.)
-2. Repeatedly struggling to place colorbars in colormap plots correctly
-3. Remembering how *GridSpec* works to make a custom subplot layout
+- Habitually having to copy the same code to "finalize" figures (e.g., hiding tick labels, tweaking subplots_adjust etc.)
+- Repeatedly struggling to find a good placement of colorbars in colormap plots 
+- Failing to remember how *GridSpec* works when needing a custom subplot layout
 
 *FigAxe* takes a somewhat brute-force approach by providing functionality to make fine-adjustments and decide on colorbar placement up front, resulting in a collection of pre-defined figure *layouts*.  A simple hack to *GridSpec* makes it very easy to add new layouts to suit the specific needs of a given project.
 
