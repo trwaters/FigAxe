@@ -1,7 +1,6 @@
 
 import numpy as np
 import pylab as plt
-import matplotlib
 from matplotlib.gridspec import GridSpec
 from importlib import reload
 import gridspec_helper; reload(gridspec_helper)

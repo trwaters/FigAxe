@@ -318,8 +318,8 @@ def custom_layouts():
 ### ==================================================
 
 def lite(name):
-    if name is None:
-        name = 'demo5b'
+    # if name is None:
+    #     name = 'demo5b'
     layout_dic = lite_layouts()
     return layout_dic.get(name, '[quick_layout]: layout {} not found.'.format(name))
 
