@@ -1,5 +1,5 @@
 # FigAxe
-*FigAxe* has allowed me to overcome a few hurdles that tended to make plotting feel like a chore, even as a rather experienced user of [*Matplotlib*](https://matplotlib.org/):
+*FigAxe* has allowed me to overcome a few hurdles that tended to make plotting feel like a chore, even as an experienced user of [*Matplotlib*](https://matplotlib.org/):
 - Habitually having to copy the same code to "finalize" figures (e.g., hiding tick labels, tweaking subplots_adjust etc.)
 - Repeatedly struggling to find a good placement of colorbars in colormap plots 
 - Failing to remember how *GridSpec* works when needing a custom subplot layout
