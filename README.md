@@ -10,4 +10,5 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 
 ## Getting Started ##
 No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.show_layouts()`, and you should see the following:
+
 ![FigAxe_screenshot2](https://user-images.githubusercontent.com/3180046/82995206-8c069400-9fc0-11ea-9e3e-b979309fb848.png)
