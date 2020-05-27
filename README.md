@@ -1,5 +1,5 @@
 # FigAxe
-*FigAxe* overcomes a few hurdles commonly faced by scientifically-oriented users of *Matplotlib*:
+*FigAxe* has allowed me to overcome a few hurdles that I used to continually face, even as a rather experienced user of *Matplotlib*:
 1. Habitually having to copy the same code to "finalize" figures (e.g., hiding tick labels, tweaking subplots_adjust etc.)
 2. Repeatedly struggling to place colorbars in colormap plots correctly
 3. Remembering how *GridSpec* works to make a custom subplot layout
