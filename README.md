@@ -14,7 +14,7 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 ## Quick start ##
 No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.help()`, and you should see the following:
 
-![FigAxe_screenshot2](https://user-images.githubusercontent.com/3180046/82995206-8c069400-9fc0-11ea-9e3e-b979309fb848.png)
+![ipython_screen](https://user-images.githubusercontent.com/3180046/83244372-7f1ea780-a15c-11ea-93ce-dd7d4d80c1be.png)
 
 ### Previewing layouts ###
 The helper function `figaxe.plot_layout()` is provided to show the skeleton figure corresponding to each layout name.  Try for example,
