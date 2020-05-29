@@ -70,7 +70,7 @@ This was necessary so that adjacent panels have the same size upon using `mpl_to
 
 ### Examples ###
 In the `demos` folder, a few examples of using *FigAxe* to make both line plots and colormap plots are provided.
-The output of `demo_cbars_h3.py` adds colorbars to this [matplotlib example](https://matplotlib.org/3.1.0/gallery/images_contours_and_fields/image_demo.html).
+The output of `demo_cbars_h3.py` adds colorbars to an example from [matplotlib's gallery](https://matplotlib.org/3.1.0/gallery/images_contours_and_fields/image_demo.html).
 
 ![figaxe_demo](https://user-images.githubusercontent.com/3180046/83251695-36b8b700-a167-11ea-809c-4537aaad21d7.png)
 
