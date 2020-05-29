@@ -64,12 +64,16 @@ Out[31]:
   'cax2': <matplotlib.axes._axes.Axes at 0x7f349eadebd0>,
   'vcb2': <matplotlib.colorbar.Colorbar at 0x7f34c2733850>})
 ```
-This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example script `demo_cbars_h3.py` shows how this functionality makes it easy to add colorbars. 
+This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example scripts `demo_cbars_h3.py` `demo_cbars_h3cb1.py` shows how this functionality makes it easy to generate colormap plots. 
 
 *FigAxe* supports both vertical and horizontal colorbar placement.  The choice can be specified for each layout defined in `gridspec_helper.custom_layouts()`, with the default being to place horizontal colorbars on *single row layouts* (layout names beginning with *h* in the list given by `figaxe.help()`) and vertical colorbars on *single column layouts* (layout names beginning with *v*) **unless** the layout name ends with `cb1`.    
 
 ### Examples ###
 In the `demos` folder, a few examples of using *FigAxe* to make both line plots and colormap plots are provided.
+The output of `demo_cbars_h3.py` adds colorbars to this [matplotlib example](https://matplotlib.org/3.1.0/gallery/images_contours_and_fields/image_demo.html).
+
+![figaxe_demo](https://user-images.githubusercontent.com/3180046/83251695-36b8b700-a167-11ea-809c-4537aaad21d7.png)
+
 
 ## Adding new layouts ##
 The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe` to the functions `custom_layouts()` and `lite_layouts()`, respectively.  Both methods utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new custom layout.  Specifically, the instances of `LiteFigAxe` in `lite_layouts()` ultimately use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
