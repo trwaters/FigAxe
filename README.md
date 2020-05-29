@@ -14,12 +14,23 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 ## Quick start ##
 No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.help()`, and you should see the following:
 
+```
+import figaxe
+fig,axs = figaxe.custom_layout()
+x = np.linspace(0,1,100)
+axs['1'].plot(x)
+axs['1'].plot(x**2)
+plt.show()
+```
+## Basic Usage ##
+The following screenshot summarizes what FigAxe is all about: a collection of pre-defined layouts (the names 'cb1h', 'cb1v' etc.) that correspond to the figures given by the ascii-art.  To see a list of all layouts, use `figaxe.help()`.
+
 ![ipython_screen](https://user-images.githubusercontent.com/3180046/83244372-7f1ea780-a15c-11ea-93ce-dd7d4d80c1be.png)
 
 Colorbar placement is indicated by the position of the `c` in the ascii-art representations when issuing `figaxe.help()`.
 
 ### Previewing layouts ###
-The above screenshot summarizes what FigAxe is all about: a collection of pre-defined layouts (the names 'cb1h', 'cb1v' etc.) that correspond to the figures given by the ascii-art.  The helper function `figaxe.plot_layout()` is provided to show the skeleton figure corresponding to each layout name.  Try for example,
+The helper function `figaxe.plot_layout()` is provided to show the skeleton figure corresponding to each layout name.  Try for example,
 
     figaxe.plot_layout('h3')
  
