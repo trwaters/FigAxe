@@ -12,7 +12,7 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 `Python` version 3.7 or later since *FigAxe* makes use of the `dataclasses` module that was introduced in `Python 3.7`.  I recommend using an [anaconda distribution](https://www.anaconda.com/), which will automatically install *ipython* and the dependencies, which are *Matplotlib*, *numpy*, and *pylab*.
 
 ## Quick start ##
-No installation required --- this is just a module.  Simply clone or download a zip of the repo and then in an ipython window, enter
+No installation required --- this is just a module.  Simply clone the repo and then in an ipython window, enter
 
 ```
 import figaxe
