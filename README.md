@@ -12,7 +12,7 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 `Python` version 3.7 or later since *FigAxe* makes use of the `dataclasses` module that was introduced in `Python 3.7`.  I recommend using an [anaconda distribution](https://www.anaconda.com/), which will automatically install *ipython* and the dependencies, which are *Matplotlib*, *numpy*, and *pylab*.
 
 ## Quick start ##
-No installation required-- this is just a module.  Simply clone or download a zip of the repo, open an ipython window, type `import figaxe` followed by `figaxe.help()`, and you should see the following:
+No installation required --- this is just a module.  Simply clone or download a zip of the repo and then in an ipython window, enter
 
 ```
 import figaxe
@@ -22,6 +22,9 @@ axs['1'].plot(x)
 axs['1'].plot(x**2)
 plt.show()
 ```
+You should see the following plot
+![Figure_1](https://user-images.githubusercontent.com/3180046/83253255-edb63200-a169-11ea-8ce5-4b03c4d643cc.png)
+
 ## Basic Usage ##
 The following screenshot summarizes what FigAxe is all about: a collection of pre-defined layouts (the names 'cb1h', 'cb1v' etc.) that correspond to the figures given by the ascii-art.  To see a list of all layouts, use `figaxe.help()`.
 
