@@ -15,12 +15,13 @@ Designed to provide automatated figure generation for [club4am](https://github.c
 No installation required --- this is just a module.  Simply clone the repo and then in an ipython window, enter
 
 ```
+from pylab import *
 import figaxe
 fig,axs = figaxe.custom_layout()
 x = np.linspace(0,1,100)
 axs['1'].plot(x)
 axs['1'].plot(x**2)
-plt.show()
+show()
 ```
 You should see the following plot
 ![Figure_1](https://user-images.githubusercontent.com/3180046/83253255-edb63200-a169-11ea-8ce5-4b03c4d643cc.png)
