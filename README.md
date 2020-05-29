@@ -79,7 +79,7 @@ Out[31]:
   'cax2': <matplotlib.axes._axes.Axes at 0x7f349eadebd0>,
   'vcb2': <matplotlib.colorbar.Colorbar at 0x7f34c2733850>})
 ```
-This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example scripts `demo_cbars_h3.py` `demo_cbars_h3cb1.py` shows how this functionality makes it easy to generate colormap plots. 
+This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example scripts `demo_cbars_h3.py` `demo_cbars_h3cb1.py` show how this functionality makes it easy to generate colormap plots. 
 
 *FigAxe* supports both vertical and horizontal colorbar placement.  The choice can be specified for each layout defined in `gridspec_helper.custom_layouts()`, with the default being to place horizontal colorbars on *single row layouts* (layout names beginning with *h* in the list given by `figaxe.help()`) and vertical colorbars on *single column layouts* (layout names beginning with *v*) **unless** the layout name ends with `cb1`.    
 
