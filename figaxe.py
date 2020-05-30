@@ -1,10 +1,11 @@
-
 import warnings
 import numpy as np
 import pylab as plt
 from matplotlib.gridspec import GridSpec
 from matplotlib.cbook import mplDeprecation
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
+
+# always reload gridspec_helper.py
 from importlib import reload
 import gridspec_helper; reload(gridspec_helper)
 
@@ -120,10 +121,6 @@ def make_lite_figure(layout,name,fig_size=None):
                     ori = "horizontal"
                     cax.xaxis.set_ticks_position("top")
 
-                # if layout.cbars[n] == 0:
-                #     axes_dic[cax_key] = None
-                #     axes_dic[cb_key] = None
-                #     cb.remove()
             else:
                 axes_dic[cax_key] = None
 
@@ -242,6 +239,7 @@ def make_figure(layout,name,fig_size=None):
                     ori = "horizontal"
                     cax.xaxis.set_ticks_position("top")
 
+				# remove cbar if not specified in layout
                 if layout.cbars[n] == 0:
                     axes_dic[cax_key] = None
                     axes_dic[cb_key] = None
