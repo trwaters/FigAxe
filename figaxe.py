@@ -168,7 +168,9 @@ def make_figure(layout,name,fig_size=None):
 
     fig = plt.figure(figsize=fig_size)
     gridspecs = gridspec_converter(layout.layout)
-    ax1 = fig.add_subplot(gridspecs[layout.head-1])
+    
+    # head axis (panel 1 by default)
+    hax = fig.add_subplot(gridspecs[layout.head-1])
 
     axes_dic = {}
     # The axes are stored in gridspec in the order specified in the layout_array
@@ -180,11 +182,11 @@ def make_figure(layout,name,fig_size=None):
             warnings.filterwarnings('ignore',category=mplDeprecation)
             if gridspec != gridspecs[layout.head-1]:
                 if share_x > 0 and share_y > 0:
-                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharex=ax1,sharey=ax1)
+                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharex=hax,sharey=hax)
                 elif share_x > 0:
-                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharex=ax1)
+                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharex=hax)
                 elif share_y > 0:
-                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharey=ax1)
+                    axes_dic[str(idx)] = fig.add_subplot(gridspec,sharey=hax)
                 else:
                     axes_dic[str(idx)] = fig.add_subplot(gridspec)
             else:
@@ -244,9 +246,10 @@ def make_figure(layout,name,fig_size=None):
                     axes_dic[cax_key] = None
                     axes_dic[cb_key] = None
                     cb.remove()
+            else:
+                axes_dic[cax_key] = None
 
-
-    # finally, apply specifications defined in the layout
+    # lastly, apply specifications defined in the layout
     plt.subplots_adjust(left=layout.adjust[0], right=layout.adjust[1],
                         bottom=layout.adjust[2],top=layout.adjust[3],
                         wspace=layout.adjust[4],hspace=layout.adjust[5])

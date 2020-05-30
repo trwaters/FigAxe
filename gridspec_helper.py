@@ -82,7 +82,7 @@ def lite_layouts():
     Add your own custom figure size and layout below
     for immediate use.  
 
-    Here's a different 5-axes plot window, which comes from
+    Here's the 5-axes plot layout 'demo5a', which comes from
     the matplotlib gallery for Gridspec
     (google "Using Gridspec to make multi-column/row subplot layouts")
 
@@ -101,7 +101,7 @@ def lite_layouts():
 
     Run figaxe.plot_layout('demo5a') to see the plot.
 
-    As a 2nd example, the following 5-axes plot layout
+    As a 2nd example, 'demo5b' is the 5-axes plot layout
     +-------+-------+---+
     |       |   2   | 3 |
     +   1   +-------+---+
@@ -140,6 +140,8 @@ def lite_layouts():
         [1,1,2,2,3],
         [1,1,4,4,5]
         ],
+        
+        # enable these optionals
         cbars = [1,0,1,0,1],                # add colors to axes 1,3,& 5
         caxloc = ['t',None,'r',None,'r'],   # place on top, right & right
         caxori = ['h',None,'v',None,'v']    # horiz, vert, & vert orientation
@@ -154,10 +156,10 @@ def custom_layouts():
 
     layout_dic = {
 
-    ##  SINGLE PANEL LAYOUTS
+    ### SINGLE PANEL LAYOUTS
     ### ==================================================
 
-    'default' : FigAxe( (7.,7.),
+    'default' : FigAxe( (5.,5.),
         [
         [1]
         ],
@@ -195,7 +197,7 @@ def custom_layouts():
         [0.05,0.96,0.07,0.94,0.02,0.03]  # params: L,R,bot,top,wspace,hspace
         ),
 
-    ##  MULTI-PANEL LAYOUTS WITHOUT COLORBARS
+    ### MULTI-PANEL LAYOUTS (WITHOUT COLORBARS)
     ### ==================================================
 
     '1by2a' : FigAxe( (9.,5.),
@@ -260,13 +262,12 @@ def custom_layouts():
         [2],
         ],
         str("""
-        +---+
-        |   |
-        | 1 |
-        |   |
-        +---+
-        | 2 |
-        +---+
+        +-----+
+        |  1  |
+        |     |
+        +-----+
+        |  2  |
+        +-----+
         """),
         [0,0],    # no colorbars
         [0.12,0.97,0.08,0.94,0.03,0.03],  # params: L,R,bot,top,wspace,hspace
@@ -277,7 +278,7 @@ def custom_layouts():
         hide_x =  [1,0],  # hide y-tick labels on panel 2
         ),
 
-    ##  HORIZONTAL LAYOUTS WITH COLORBARS
+    ### HORIZONTAL LAYOUTS WITH COLORBARS
     ### ==================================================
 
     'h2' : FigAxe( (8.5,5.1),
@@ -476,7 +477,7 @@ def custom_layouts():
         hide_x =  [1,1,0],  # hide x-tick labels on panels 1 and 2
         ),
 
-    ##  GRID LAYOUTS WITH COLORBARS
+    ### GRID LAYOUTS WITH COLORBARS
     ### ==================================================
 
     'g3a' : FigAxe( (8.5,5.),
@@ -495,7 +496,7 @@ def custom_layouts():
         [0.08,0.92,0.1,0.92,0.2,0.05],  # params: L,R,bot,top,wspace,hspace
 
         # enable these optionals 
-        head    = 2,
+        head    = 2,		# change head axis (for sharing)
         share_x = [0,0,1],  # panel 3 shares xlim of panel 2
         share_y = [0,0,1],  # panel 3 shares ylim of panel 2
         hide_x =  [0,1,0],  # hide x-tick labels on panel 2
