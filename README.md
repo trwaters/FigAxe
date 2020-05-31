@@ -71,13 +71,13 @@ In [31]: figaxe.custom_layout('h2cb1')
         +---+---+
         
 Out[31]: 
-(<Figure size 1200x750 with 3 Axes>,
- {'1': <matplotlib.axes._subplots.AxesSubplot at 0x7f3479419650>,
-  '2': <matplotlib.axes._subplots.AxesSubplot at 0x7f34c21f0210>,
-  'cax1': <matplotlib.axes._axes.Axes at 0x7f34792d07d0>,
+(<Figure size 800x500 with 3 Axes>,
+ {'1': <matplotlib.axes._subplots.AxesSubplot at 0x7f7aad2047d0>,
+  '2': <matplotlib.axes._subplots.AxesSubplot at 0x7f7a950c3f50>,
+  'cax1': None,
   'vcb1': None,
-  'cax2': <matplotlib.axes._axes.Axes at 0x7f349eadebd0>,
-  'vcb2': <matplotlib.colorbar.Colorbar at 0x7f34c2733850>})
+  'cax2': <matplotlib.axes._axes.Axes at 0x7f7a95c70710>,
+  'vcb2': <matplotlib.colorbar.Colorbar at 0x7f7a95c24dd0>})
 ```
 This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example scripts `demo_cbars_h3.py` `demo_cbars_h3cb1.py` show how this functionality makes it easy to generate colormap plots. 
 
