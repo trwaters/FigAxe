@@ -41,11 +41,11 @@ The helper function `figaxe.plot_layout()` is provided to show the skeleton figu
 ### Using *FigAxe* in place of *GridSpec* or *subplots* ###
 Just like these modules, *FigAxe* is used to return figure and axes handles:
 
-    fig,axs =  figaxe.custom_layout('h2')
+    fig,axs =  figaxe.use_layout('h2')
 To allow for colorbar functionality, `axs` is a dictionary, not a list.  For the layout 'h2', we have 
 
 ```
-In [30]: figaxe.custom_layout('h2')                                                                  
+In [30]: figaxe.use_layout('h2')                                                                  
 
           c   c 
         +---+---+
@@ -64,7 +64,7 @@ Out[30]:
 In addition to the two axes handles `axs['1']` and `axs['2']`, there are the two colorbar axes handles, `axs['cax1']` and `axs['cax2']`, and the two colorbars themselves, `axs['hcb1']` and `axs['hcb2']`.  The 'h' means these colorbars have a horizontal orientation.  That is, this custom layout was pre-designed to have handles and room for two horizontal colorbars.  By contrast, the layout 'h2cb1' has instead a single vertical colorbar, but it still has two colorbar axes handles:
 
 ```
-In [31]: figaxe.custom_layout('h2cb1')                                                               
+In [31]: figaxe.use_layout('h2cb1')                                                               
 
         +---+---+ 
         | 1 | 2 |c
@@ -93,10 +93,7 @@ The output of `demo_cbars_h3.py` adds colorbars to an example from [matplotlib's
 ## Adding new layouts ##
 The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe` to the functions `custom_layouts()` and `lite_layouts()`, respectively.  Both methods utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new custom layout.  Specifically, the instances of `LiteFigAxe` in `lite_layouts()` ultimately use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
 
-If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, simply type
-
-    figaxe.lite_layout()
-which will issue an error since no `layout name` was passed.  This error shows the following instructions for defining a new layout:
+If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, `figaxe.help` shows the following instructions for defining a new layout:
 
 ![lite_layout](https://user-images.githubusercontent.com/3180046/83005637-4781f500-9fce-11ea-9885-9d8af07eec4d.png)
 
