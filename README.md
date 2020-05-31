@@ -29,7 +29,7 @@ You should see the following plot
 ## Basic Usage ##
 The following screenshot summarizes what FigAxe is all about: a collection of pre-defined layouts (the names 'cb1h', 'cb1v' etc.) that correspond to the figures given by the ascii-art.  To see a list of all layouts, use `figaxe.help()`.
 
-![ipython_screen](https://user-images.githubusercontent.com/3180046/83244372-7f1ea780-a15c-11ea-93ce-dd7d4d80c1be.png)
+![ipython_screen](https://user-images.githubusercontent.com/3180046/83346795-d21f6880-a2dc-11ea-8fd5-7ed105d5732b.png)
 
 Colorbar placement is indicated by the position of the `c` in the ascii-art representations when issuing `figaxe.help()`.
 
