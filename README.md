@@ -17,7 +17,7 @@ No installation required --- this is just a module.  Simply clone the repo and t
 ```
 from pylab import *
 import figaxe
-fig,axs = figaxe.custom_layout()
+fig,axs = figaxe.use_layout()
 x = np.linspace(0,1,100)
 axs['1'].plot(x)
 axs['1'].plot(x**2)
