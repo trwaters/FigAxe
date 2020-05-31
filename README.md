@@ -91,7 +91,7 @@ The output of `demo_cbars_h3.py` adds colorbars to an example from [matplotlib's
 
 
 ## Adding new layouts ##
-The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe`.  Both of these dataclasses utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new layout.  In particular, instances of `LiteFigAxe` use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
+The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe`.  Both of these dataclasses utilize *GridSpec* to generate axes handles, but `LiteFigAxe` is designed for quickly adding a new layout, as it uses `tight_layout` instead of `subplots_adjust` for panel placement (see `make_lite_figure()` in `figaxe.py`).   
 
 If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, `figaxe.help` shows the following instructions for defining a new layout:
 
