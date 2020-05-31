@@ -95,7 +95,7 @@ The module `figaxe.py` contains the methods for making the actual *fig,axes* han
 
 If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, `figaxe.help` shows the following instructions for defining a new layout:
 
-![lite_layout](https://user-images.githubusercontent.com/3180046/83005637-4781f500-9fce-11ea-9885-9d8af07eec4d.png)
+![layout_help](https://user-images.githubusercontent.com/3180046/83347917-b10f4580-a2e5-11ea-9843-b4b63d174182.png)
 
 This layout is actually the one used as [a demonstration](https://matplotlib.org/3.2.1/gallery/subplots_axes_and_figures/gridspec_multicolumn.html#sphx-glr-gallery-subplots-axes-and-figures-gridspec-multicolumn-py) for *GridSpec* and corresponds to the following less intuitve statements
 
