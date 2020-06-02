@@ -17,7 +17,7 @@ No installation required --- this is just a module.  Simply clone the repo and t
 ```
 from pylab import *
 import figaxe
-fig,axs = figaxe.custom_layout()
+fig,axs = figaxe.use_layout()
 x = np.linspace(0,1,100)
 axs['1'].plot(x)
 axs['1'].plot(x**2)
@@ -29,7 +29,7 @@ You should see the following plot
 ## Basic Usage ##
 The following screenshot summarizes what FigAxe is all about: a collection of pre-defined layouts (the names 'cb1h', 'cb1v' etc.) that correspond to the figures given by the ascii-art.  To see a list of all layouts, use `figaxe.help()`.
 
-![ipython_screen](https://user-images.githubusercontent.com/3180046/83244372-7f1ea780-a15c-11ea-93ce-dd7d4d80c1be.png)
+![ipython_screen](https://user-images.githubusercontent.com/3180046/83346795-d21f6880-a2dc-11ea-8fd5-7ed105d5732b.png)
 
 Colorbar placement is indicated by the position of the `c` in the ascii-art representations when issuing `figaxe.help()`.
 
@@ -41,11 +41,11 @@ The helper function `figaxe.plot_layout()` is provided to show the skeleton figu
 ### Using *FigAxe* in place of *GridSpec* or *subplots* ###
 Just like these modules, *FigAxe* is used to return figure and axes handles:
 
-    fig,axs =  figaxe.custom_layout('h2')
+    fig,axs =  figaxe.use_layout('h2')
 To allow for colorbar functionality, `axs` is a dictionary, not a list.  For the layout 'h2', we have 
 
 ```
-In [30]: figaxe.custom_layout('h2')                                                                  
+In [30]: figaxe.use_layout('h2')                                                                  
 
           c   c 
         +---+---+
@@ -64,20 +64,20 @@ Out[30]:
 In addition to the two axes handles `axs['1']` and `axs['2']`, there are the two colorbar axes handles, `axs['cax1']` and `axs['cax2']`, and the two colorbars themselves, `axs['hcb1']` and `axs['hcb2']`.  The 'h' means these colorbars have a horizontal orientation.  That is, this custom layout was pre-designed to have handles and room for two horizontal colorbars.  By contrast, the layout 'h2cb1' has instead a single vertical colorbar, but it still has two colorbar axes handles:
 
 ```
-In [31]: figaxe.custom_layout('h2cb1')                                                               
+In [31]: figaxe.use_layout('h2cb1')                                                               
 
         +---+---+ 
         | 1 | 2 |c
         +---+---+
         
 Out[31]: 
-(<Figure size 1200x750 with 3 Axes>,
- {'1': <matplotlib.axes._subplots.AxesSubplot at 0x7f3479419650>,
-  '2': <matplotlib.axes._subplots.AxesSubplot at 0x7f34c21f0210>,
-  'cax1': <matplotlib.axes._axes.Axes at 0x7f34792d07d0>,
+(<Figure size 800x500 with 3 Axes>,
+ {'1': <matplotlib.axes._subplots.AxesSubplot at 0x7f7aad2047d0>,
+  '2': <matplotlib.axes._subplots.AxesSubplot at 0x7f7a950c3f50>,
+  'cax1': None,
   'vcb1': None,
-  'cax2': <matplotlib.axes._axes.Axes at 0x7f349eadebd0>,
-  'vcb2': <matplotlib.colorbar.Colorbar at 0x7f34c2733850>})
+  'cax2': <matplotlib.axes._axes.Axes at 0x7f7a95c70710>,
+  'vcb2': <matplotlib.colorbar.Colorbar at 0x7f7a95c24dd0>})
 ```
 This was necessary so that adjacent panels have the same size upon using `mpl_toolkits.axes_grid1.axes_divider.make_axes_locatable` to add colorbars.  The example scripts `demo_cbars_h3.py` `demo_cbars_h3cb1.py` show how this functionality makes it easy to generate colormap plots. 
 
@@ -91,14 +91,11 @@ The output of `demo_cbars_h3.py` adds colorbars to an example from [matplotlib's
 
 
 ## Adding new layouts ##
-The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe` to the functions `custom_layouts()` and `lite_layouts()`, respectively.  Both methods utilize *GridSpec* to generate axes handles, but the *lite*-variety are designed for quickly adding a new custom layout.  Specifically, the instances of `LiteFigAxe` in `lite_layouts()` ultimately use `tight_layout` (see `make_lite_figure()` in `figaxe.py`), while the more flexible `FigAxe` class uses `subplots_adjust`.  
+The module `figaxe.py` contains the methods for making the actual *fig,axes* handles given a layout defined in `gridspec_helper.py`.  Normal usage of *FigAxe* should only require editing `gridspec_helper.py` in order to add new instances of the classes `FigAxe` and `LiteFigAxe`.  Both of these dataclasses utilize *GridSpec* to generate axes handles, but `LiteFigAxe` is designed for quickly adding a new layout, as it uses `tight_layout` instead of `subplots_adjust` for panel placement (see `make_lite_figure()` in `figaxe.py`).   
 
-If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, simply type
+If you forget how *FigAxe*'s *Gridspec*-hack for defining new layouts works, `figaxe.help` shows the following instructions for defining a new layout:
 
-    figaxe.lite_layout()
-which will issue an error since no `layout name` was passed.  This error shows the following instructions for defining a new layout:
-
-![lite_layout](https://user-images.githubusercontent.com/3180046/83005637-4781f500-9fce-11ea-9885-9d8af07eec4d.png)
+![layout_help](https://user-images.githubusercontent.com/3180046/83347917-b10f4580-a2e5-11ea-9843-b4b63d174182.png)
 
 This layout is actually the one used as [a demonstration](https://matplotlib.org/3.2.1/gallery/subplots_axes_and_figures/gridspec_multicolumn.html#sphx-glr-gallery-subplots-axes-and-figures-gridspec-multicolumn-py) for *GridSpec* and corresponds to the following less intuitve statements
 
