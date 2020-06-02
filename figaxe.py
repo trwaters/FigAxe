@@ -11,46 +11,8 @@ import gridspec_helper; reload(gridspec_helper)
 
 
 
-### methods for lite layouts
+### fig generator method using LiteFigAxe class
 ### ==================================================
-
-# use to choose among lite layouts in gridspec_helper
-def lite_layout(name=None, fig_size=None):
-    """
-    input: a string specifying the layout
-    returns: fig,axes handles
-    """
-
-    try:
-        layout = gridspec_helper.lite(name)
-        fig,axes = make_lite_figure(layout,name,fig_size)
-        return fig,axes
-    except:
-        print('[lite_layout]: exception thrown for layout {}.')
-        print("""
-            Example of a FigAxe layout array:
-            layout= [
-                    [1,1,1],
-                    [2,2,3],
-                    [4,5,3]
-                    ])
-
-            This corresponds to a 5-axes plot window like 
-
-            +-----------------+
-            |        1        |
-            +-----------+-----+
-            |      2    |     |
-            +-----+-----+  3  +
-            |  4  |  5  |     |
-            +-----+-----+-----+
- 
-            - row 1 layout is [1,1,1]
-            - row 2 layout is [2,2,3]
-            - row 3 layout is [4,5,3]   
-        """)
-
-
 
 # called by lite_layout() 
 def make_lite_figure(layout,name,fig_size=None):
@@ -132,26 +94,8 @@ def make_lite_figure(layout,name,fig_size=None):
 
 
 
-### methods for custom layouts
+### fig generator method using FigAxe class
 ### ==================================================
-
-# use to choose among lite layouts in gridspec_helper
-def custom_layout(name='default', fig_size=None):
-    """
-    input: a string specifying the layout
-    returns: fig,axes handles
-    """
-
-    try:
-        layout = gridspec_helper.custom(name)
-        print('{}'.format(layout.art))
-        fig,axes = make_figure(layout,name,fig_size)
-        return fig,axes
-    except:
-        print('Layout {} not found. Choose from these names:'.format(name))
-        help(show_art=False)
-
-
 
 # called by custom_layout()
 def make_figure(layout,name,fig_size=None):
@@ -260,6 +204,32 @@ def make_figure(layout,name,fig_size=None):
 ### general methods
 ### ==================================================
 
+# use to choose among layouts in gridspec_helper
+def use_layout(name='default', fig_size=None):
+    """
+    input: a string specifying the layout
+    returns: fig,axes handles
+    """
+
+    layouts_custom = gridspec_helper.custom_layouts()
+    layouts_lite = gridspec_helper.lite_layouts()
+
+    if name in layouts_custom.keys():
+        layout = gridspec_helper.custom(name)
+        print('{}'.format(layout.art))
+        fig,axes = make_figure(layout,name,fig_size)
+        return fig,axes
+    elif name in layouts_lite.keys():
+        layout = gridspec_helper.lite(name)
+        fig,axes = make_lite_figure(layout,name,fig_size)
+        return fig,axes
+    else:
+        print('Layout {} not found. Choose from these names:'.format(name))
+        help(show_art=False)
+        import sys
+        sys.exit()
+
+
 # helper function to plot any layout in gridspec_helper
 def plot_layout(name='default'):
     layouts_custom = gridspec_helper.custom_layouts()
@@ -304,14 +274,35 @@ def help(show_art=True):
     for key in layouts_lite.keys():
         print('{}'.format(key))
 
+    print("""\n
+    Example of a FigAxe layout array:
+    layout= [
+            [1,1,1],
+            [2,2,3],
+            [4,5,3]
+            ])
+
+    This corresponds to a 5-axes plot window like 
+
+    +-----------------+
+    |        1        |
+    +-----------+-----+
+    |      2    |     |
+    +-----+-----+  3  +
+    |  4  |  5  |     |
+    +-----+-----+-----+
+
+    - row 1 layout is [1,1,1]
+    - row 2 layout is [2,2,3]
+    - row 3 layout is [4,5,3]   
+    """)
+
     print('\nUsage:\n======================')
-    print('-Preview a layout:')
+    print('\n-Preview a layout:')
     print('> figaxe.plot_layout(name)')
-    print('-Use a custom layout:')
+    print('\n-Use a layout:')
     print('> fig,axs = figaxe.custom_layout(name)')
-    print('-Use a lite layout:')
-    print('> fig,axs = figaxe.lite_layout(name)')
-    print('-Add new layouts by editing gridspec_helper.py.')
+    print('\n-Add new layouts by editing gridspec_helper.py.')
 
 
 
