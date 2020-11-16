@@ -1,7 +1,6 @@
 import sys
 import numpy as np
 import pylab as plt
-from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 from importlib import reload
 
 # make figaxe module visible in path
@@ -30,7 +29,7 @@ A = np.random.rand(5, 5)
 
 layout = 'h3'
 
-fig,axs =  figaxe.custom_layout(layout)
+fig,axs =  figaxe.use_layout(layout)
 
 # axs is a dictionary containing specificiation for colorbars;
 # here's how to extract the colorbar handles

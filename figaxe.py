@@ -301,7 +301,7 @@ def help(show_art=True):
     print('\n-Preview a layout:')
     print('> figaxe.plot_layout(name)')
     print('\n-Use a layout:')
-    print('> fig,axs = figaxe.custom_layout(name)')
+    print('> fig,axs = figaxe.use_layout(name)')
     print('\n-Add new layouts by editing gridspec_helper.py.')
 
 
